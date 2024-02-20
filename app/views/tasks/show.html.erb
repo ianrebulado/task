@@ -1,0 +1,15 @@
+<div class="flex m-10 text-black">
+  <div class="mx-auto">
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% end %>
+
+    <%= render @task %>
+
+    <%= link_to "Edit this task", edit_task_path(@task), class: "mt-2 rounded-lg py-3 px-5 bg-yellow-300 inline-block font-medium text-white" %>
+    <div class="inline-block ml-2">
+      <%= button_to "Delete this task", task_path(@task), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-red-400 font-medium text-white" %>
+    </div>
+    <%= link_to "Back to Tasks", tasks_path, class: "ml-2 rounded-lg py-3 px-5 bg-blue-600 inline-block font-medium text-white" %>
+  </div>
+</div>
